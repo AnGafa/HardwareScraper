@@ -1,0 +1,20 @@
+P:\Resources\Lecturers\Ranier Bonnici\4.2C\2b Wikipedia\Wikipedia\Task2\obj\Debug\Task2.csprojAssemblyReference.cache
+P:\Resources\Lecturers\Ranier Bonnici\4.2C\2b Wikipedia\Wikipedia\Task2\obj\Debug\Task2.csproj.CoreCompileInputs.cache
+P:\Resources\Lecturers\Ranier Bonnici\4.2C\2b Wikipedia\Wikipedia\Task2\obj\Debug\Task1.exe
+P:\Resources\Lecturers\Ranier Bonnici\4.2C\2b Wikipedia\Wikipedia\Task2\obj\Debug\Task1.pdb
+P:\Resources\Lecturers\Ranier Bonnici\4.2C\2b Wikipedia\Wikipedia\Task2\bin\Debug\Task1.exe.config
+P:\Resources\Lecturers\Ranier Bonnici\4.2C\2b Wikipedia\Wikipedia\Task2\bin\Debug\Task1.exe
+P:\Resources\Lecturers\Ranier Bonnici\4.2C\2b Wikipedia\Wikipedia\Task2\bin\Debug\Task1.pdb
+P:\Resources\Lecturers\Ranier Bonnici\4.2C\2b Wikipedia\Wikipedia\Task2\bin\Debug\WebDriver.dll
+P:\Resources\Lecturers\Ranier Bonnici\4.2C\2b Wikipedia\Wikipedia\Task2\bin\Debug\WebDriver.xml
+P:\Resources\Lecturers\Ranier Bonnici\4.2C\2b Wikipedia\Wikipedia\Task2\obj\Debug\Task2.csproj.CopyComplete
+C:\Users\andre_000\Desktop\project\2b Wikipedia\Wikipedia\Task2\bin\Debug\Task1.exe.config
+C:\Users\andre_000\Desktop\project\2b Wikipedia\Wikipedia\Task2\bin\Debug\Task1.exe
+C:\Users\andre_000\Desktop\project\2b Wikipedia\Wikipedia\Task2\bin\Debug\Task1.pdb
+C:\Users\andre_000\Desktop\project\2b Wikipedia\Wikipedia\Task2\bin\Debug\WebDriver.dll
+C:\Users\andre_000\Desktop\project\2b Wikipedia\Wikipedia\Task2\bin\Debug\WebDriver.xml
+C:\Users\andre_000\Desktop\project\2b Wikipedia\Wikipedia\Task2\obj\Debug\Task2.csprojAssemblyReference.cache
+C:\Users\andre_000\Desktop\project\2b Wikipedia\Wikipedia\Task2\obj\Debug\Task2.csproj.CoreCompileInputs.cache
+C:\Users\andre_000\Desktop\project\2b Wikipedia\Wikipedia\Task2\obj\Debug\Task2.csproj.CopyComplete
+C:\Users\andre_000\Desktop\project\2b Wikipedia\Wikipedia\Task2\obj\Debug\Task1.exe
+C:\Users\andre_000\Desktop\project\2b Wikipedia\Wikipedia\Task2\obj\Debug\Task1.pdb

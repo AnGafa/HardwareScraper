@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Searches>
+  <Search>
+    <SearchTerm>Malta</SearchTerm>
+    <ArticleText>This is some text about Malta</ArticleText>
+  </Search>
+  <Search>
+    <SearchTerm>Gozo</SearchTerm>
+    <ArticleText>This is some text about Gozo</ArticleText>
+  </Search>
+</Searches>

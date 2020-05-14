@@ -1,0 +1,14 @@
+C:\Users\andre_000\Desktop\project\2b Wikipedia\Wikipedia\Task2\bin\Debug\HardwareScraper.exe.config
+C:\Users\andre_000\Desktop\project\2b Wikipedia\Wikipedia\Task2\bin\Debug\HardwareScraper.exe
+C:\Users\andre_000\Desktop\project\2b Wikipedia\Wikipedia\Task2\bin\Debug\HardwareScraper.pdb
+C:\Users\andre_000\Desktop\project\2b Wikipedia\Wikipedia\Task2\bin\Debug\WebDriver.dll
+C:\Users\andre_000\Desktop\project\2b Wikipedia\Wikipedia\Task2\bin\Debug\WebDriver.xml
+C:\Users\andre_000\Desktop\project\2b Wikipedia\Wikipedia\Task2\obj\Debug\HardwareScraper.csprojAssemblyReference.cache
+C:\Users\andre_000\Desktop\project\2b Wikipedia\Wikipedia\Task2\obj\Debug\HardwareScraper.csproj.CoreCompileInputs.cache
+C:\Users\andre_000\Desktop\project\2b Wikipedia\Wikipedia\Task2\obj\Debug\HardwareScraper.csproj.CopyComplete
+C:\Users\andre_000\Desktop\project\2b Wikipedia\Wikipedia\Task2\obj\Debug\HardwareScraper.exe
+C:\Users\andre_000\Desktop\project\2b Wikipedia\Wikipedia\Task2\obj\Debug\HardwareScraper.pdb
+C:\Users\andre\OneDrive\MCAST\Wikipedia\Task2\obj\Debug\HardwareScraper.csprojAssemblyReference.cache
+C:\Users\andre\OneDrive\MCAST\Wikipedia\Task2\obj\Debug\HardwareScraper.csproj.CoreCompileInputs.cache
+C:\Users\andre\OneDrive\MCAST\Wikipedia\Task2\obj\Debug\HardwareScraper.exe
+C:\Users\andre\OneDrive\MCAST\Wikipedia\Task2\obj\Debug\HardwareScraper.pdb

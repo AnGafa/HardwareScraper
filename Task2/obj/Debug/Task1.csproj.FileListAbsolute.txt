@@ -1,0 +1,20 @@
+C:\Ranier\OneDrive - Malta College of Arts, Science & Technology\MCAST\Subjects\L4 Projects\Material\2b Wikipedia\Wikipedia\Task1\bin\Debug\Task1.exe.config
+C:\Ranier\OneDrive - Malta College of Arts, Science & Technology\MCAST\Subjects\L4 Projects\Material\2b Wikipedia\Wikipedia\Task1\bin\Debug\Task1.exe
+C:\Ranier\OneDrive - Malta College of Arts, Science & Technology\MCAST\Subjects\L4 Projects\Material\2b Wikipedia\Wikipedia\Task1\bin\Debug\Task1.pdb
+C:\Ranier\OneDrive - Malta College of Arts, Science & Technology\MCAST\Subjects\L4 Projects\Material\2b Wikipedia\Wikipedia\Task1\bin\Debug\WebDriver.dll
+C:\Ranier\OneDrive - Malta College of Arts, Science & Technology\MCAST\Subjects\L4 Projects\Material\2b Wikipedia\Wikipedia\Task1\bin\Debug\WebDriver.xml
+C:\Ranier\OneDrive - Malta College of Arts, Science & Technology\MCAST\Subjects\L4 Projects\Material\2b Wikipedia\Wikipedia\Task1\obj\Debug\Task1.csprojAssemblyReference.cache
+C:\Ranier\OneDrive - Malta College of Arts, Science & Technology\MCAST\Subjects\L4 Projects\Material\2b Wikipedia\Wikipedia\Task1\obj\Debug\Task1.csproj.CoreCompileInputs.cache
+C:\Ranier\OneDrive - Malta College of Arts, Science & Technology\MCAST\Subjects\L4 Projects\Material\2b Wikipedia\Wikipedia\Task1\obj\Debug\Task1.csproj.CopyComplete
+C:\Ranier\OneDrive - Malta College of Arts, Science & Technology\MCAST\Subjects\L4 Projects\Material\2b Wikipedia\Wikipedia\Task1\obj\Debug\Task1.exe
+C:\Ranier\OneDrive - Malta College of Arts, Science & Technology\MCAST\Subjects\L4 Projects\Material\2b Wikipedia\Wikipedia\Task1\obj\Debug\Task1.pdb
+P:\Resources\Lecturers\Ranier Bonnici\4.2C\2b Wikipedia\Wikipedia\Task1\bin\Debug\Task1.exe.config
+P:\Resources\Lecturers\Ranier Bonnici\4.2C\2b Wikipedia\Wikipedia\Task1\bin\Debug\Task1.exe
+P:\Resources\Lecturers\Ranier Bonnici\4.2C\2b Wikipedia\Wikipedia\Task1\bin\Debug\Task1.pdb
+P:\Resources\Lecturers\Ranier Bonnici\4.2C\2b Wikipedia\Wikipedia\Task1\bin\Debug\WebDriver.dll
+P:\Resources\Lecturers\Ranier Bonnici\4.2C\2b Wikipedia\Wikipedia\Task1\bin\Debug\WebDriver.xml
+P:\Resources\Lecturers\Ranier Bonnici\4.2C\2b Wikipedia\Wikipedia\Task1\obj\Debug\Task1.csprojAssemblyReference.cache
+P:\Resources\Lecturers\Ranier Bonnici\4.2C\2b Wikipedia\Wikipedia\Task1\obj\Debug\Task1.csproj.CoreCompileInputs.cache
+P:\Resources\Lecturers\Ranier Bonnici\4.2C\2b Wikipedia\Wikipedia\Task1\obj\Debug\Task1.csproj.CopyComplete
+P:\Resources\Lecturers\Ranier Bonnici\4.2C\2b Wikipedia\Wikipedia\Task1\obj\Debug\Task1.exe
+P:\Resources\Lecturers\Ranier Bonnici\4.2C\2b Wikipedia\Wikipedia\Task1\obj\Debug\Task1.pdb
