@@ -8,6 +8,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
+using System.Xml.Schema;
 
 namespace HardwareScraper
 {
@@ -28,10 +29,21 @@ namespace HardwareScraper
 
         public string Search(string searchTerm)
         {
+
             List<ResultItem> results = new List<ResultItem>();
-            
-            
-            ResultItem result = new ResultItem();
+
+
+            var xPathName = new List<string>();
+            xPathName.Add("//*[@id='maincontent']/div[3]/div[1]/div[3]/div[2]/ol/li[1]/div/div[2]/strong/a");
+            xPathName.Add("/html/body/div[1]/main/div[3]/div[1]/div[3]/div[2]/ol/li[2]/div/div[2]/strong/a");
+
+            var xPathPrice = new List<string>();
+            xPathPrice.Add("/html/body/div[1]/main/div[3]/div[1]/div[3]/div[2]/ol/li[1]/div/div[2]/div[2]/span/span");
+            xPathPrice.Add("/html/body/div[1]/main/div[3]/div[1]/div[3]/div[2]/ol/li[2]/div/div[2]/div[2]/span/span");
+
+            var xPathAvailability = new List<string>();
+            xPathAvailability.Add("//li[contains(concat(' ',normalize-space(@class),' '),' item ')][1]//button[contains(concat(' ',normalize-space(@class),' '),' action ')]//span");
+            xPathAvailability.Add("/html/body/div[1]/main/div[3]/div[1]/div[3]/div[2]/ol/li[2]/div/div[2]/div[3]/div/div[1]/form/button/span");
 
             IWebElement searchField = client.FindElementById("search");
             searchField.SendKeys(searchTerm);
@@ -39,28 +51,34 @@ namespace HardwareScraper
             //IWebElement button = client.FindElement(By.TagName("button"));
             IWebElement button = client.FindElement(By.XPath("//button[@title='Search']"));
             button.Click();
-            //IWebElement divMainContent = client.FindElement(By.XPath(""));
 
-            string xPathStr = "//li[contains(concat(' ',normalize-space(@class),' '),' item ')][1]//a[contains(concat(' ',normalize-space(@class),' '),' product-item-link ')]";
-            IWebElement mainResult = client.FindElement(By.XPath(xPathStr));
-            mainResult.Click();
 
-            string xPathName = "//span[contains(concat(' ',normalize-space(@class),' '),' base ')]";
-            IWebElement resultNameElement = client.FindElement(By.XPath(xPathName));
-            result.ProductName = resultNameElement.Text;
+            for(int x=0; x<2; x++)
+            {
+                // start loop
+                ResultItem result = new ResultItem();
 
-            string xPathPrice1 = "//div[contains(concat(' ',normalize-space(@class),' '),' product-info-price ')]//span[contains(concat(' ',normalize-space(@class),' '),' special-price ')]//span[contains(concat(' ',normalize-space(@class),' '),' price ')]";
-            string xPathPrice2 = "//div[contains(concat(' ',normalize-space(@class),' '),' product-info-price ')]//span[contains(concat(' ',normalize-space(@class),' '),' price ')]";
-            IWebElement resultPriceElement = client.FindElement(By.XPath(xPathPrice2));
-            result.Price = resultPriceElement.Text;
+                /*
+                IWebElement mainResult = client.FindElement(By.XPath(xPathStr[0]));
+                mainResult.Click();*/
 
-            string xPathAvailability = "//div[contains(concat(' ',normalize-space(@class),' '),' product-info-stock-sku ')]//span";
-            IWebElement resultAvailabilityElement = client.FindElement(By.XPath(xPathAvailability));
-            result.Availability = resultAvailabilityElement.Text;
+                IWebElement resultNameElement = client.FindElement(By.XPath(xPathName[x]));
+                result.ProductName = resultNameElement.Text;
 
+                IWebElement resultPriceElement = client.FindElement(By.XPath(xPathPrice[x]));
+                result.Price= resultPriceElement.Text;
+
+                IWebElement resultAvailabilityElement = client.FindElement(By.XPath(xPathAvailability[x]));
+                result.Availability = resultAvailabilityElement.Text;
+
+                results.Add(result);
+
+                // end of loop
+            }
+            
+            // here you will have array of results
 
             string article = string.Empty;
-
             return article;
         }
     }
