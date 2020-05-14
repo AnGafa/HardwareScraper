@@ -1,11 +1,4 @@
-﻿using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 
 namespace HardwareScraper
 {
@@ -13,7 +6,7 @@ namespace HardwareScraper
     {
         static void Main(string[] args)
         {
-            ScanScraper sm = new ScanScraper();
+            //ScanScraper sm = new ScanScraper();
             //CacheManager cm = new CacheManager();
 
             Console.Clear();
@@ -21,10 +14,14 @@ namespace HardwareScraper
             string searchTerm = Console.ReadLine();
 
 
- 
-            string article = sm.Search(searchTerm);
-            
+            ScraperManager scrapers = new ScraperManager();
 
+            scrapers.scrape(searchTerm);
+
+
+            //List<ResultItem> res = sm.Search(searchTerm);
+            
+            
 
             //string article = cm.Search(searchTerm);
             //if (article == null)
@@ -36,7 +33,6 @@ namespace HardwareScraper
             Console.Clear();
             Console.WriteLine(searchTerm);
             Console.WriteLine();
-            Console.WriteLine(article);
             Console.ReadKey();
         }
     }
