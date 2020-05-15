@@ -8,7 +8,8 @@ namespace HardwareScraper
 
         public ScraperManager()
         {
-            hardwareScrapers.Add(new ScanScraper());
+            //hardwareScrapers.Add(new ScanScraper());
+            hardwareScrapers.Add(new KlikkScraper());
         }
 
         public void scrape(string searchString)

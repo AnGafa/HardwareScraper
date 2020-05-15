@@ -25,7 +25,7 @@ namespace HardwareScraper
             service.SuppressInitialDiagnosticInformation = true;
             service.HideCommandPromptWindow = true;
             ChromeOptions options = new ChromeOptions();
-            options.AddArgument("--headless");
+            //options.AddArgument("--headless");
             client = new ChromeDriver(service, options);
         }
 
