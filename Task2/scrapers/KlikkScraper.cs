@@ -11,40 +11,19 @@ namespace HardwareScraper
         {
 
             const int numberOfItems = 5;
-
-
-            XPathParameters param = null;
-
+            
             for (int i = 0; i < numberOfItems; i++)
             {
-                param = new XPathParameters();
-                param.XPathNameParameter = "/html/body/div[2]/div/main/section/div/div/div[2]/div/product-grid/div/div["+ (3+i) +"]/div/div/a/div[2]/p";
-                param.XPathPriceParameter = "/html/body/div[2]/div/main/section/div/div/div[2]/div/product-grid/div/div[" + (3 + i) + "]/div/div/div[2]/div[1]";
-                param.XPathAvailabilityParameter = "//*[@id='content']/div/div/div[2]/div/product-grid/div/div[" + (3 + i) + "]/div/div/div[4]/span[2]";
+                XPathParameters param = new XPathParameters
+                {
+                    XPathNameParameter = "/html/body/div[2]/div/main/section/div/div/div[2]/div/product-grid/div/div[" + (3 + i) + "]/div/div/a/div[2]/p",
+                    XPathPriceParameter = "/html/body/div[2]/div/main/section/div/div/div[2]/div/product-grid/div/div[" + (3 + i) + "]/div/div/div[2]/div[1]",
+                    XPathAvailabilityParameter = "//*[@id='content']/div/div/div[2]/div/product-grid/div/div[" + (3 + i) + "]/div/div/div[4]/span[2]"
+                };
                 this.xPathParams.Add(param);
             }
 
 
-
-
-            //XPathParameters param = new XPathParameters();
-            //param.XPathNameParameter = "/html/body/div[2]/div/main/section/div/div/div[2]/div/product-grid/div/div[3]/div/div/a/div[2]/p";
-            //param.XPathPriceParameter = "/html/body/div[2]/div/main/section/div/div/div[2]/div/product-grid/div/div[3]/div/div/div[2]/div[1]";
-            //param.XPathAvailabilityParameter = "//*[@id='content']/div/div/div[2]/div/product-grid/div/div[3]/div/div/div[4]/span[2]";
-            //this.xPathParams.Add(param);
-
-            //param = new XPathParameters();
-            //param.XPathNameParameter = "//*[@id='content']/div/div/div[2]/div/product-grid/div/div[4]/div/div/a/div[2]/p";
-            //param.XPathPriceParameter = "//*[@id='content']/div/div/div[2]/div/product-grid/div/div[4]/div/div/div[2]/div[1]";
-            //param.XPathAvailabilityParameter = "//*[@id='content']/div/div/div[2]/div/product-grid/div/div[4]/div/div/div[4]/span[2]";
-            //this.xPathParams.Add(param);
-
-
-            //param = new XPathParameters();
-            //param.XPathNameParameter = "//*[@id='content']/div/div/div[2]/div/product-grid/div/div[5]/div/div/a/div[2]/p";
-            //param.XPathPriceParameter = "//*[@id='content']/div/div/div[2]/div/product-grid/div/div[5]/div/div/div[2]/div[1]";
-            //param.XPathAvailabilityParameter = "//*[@id='content']/div/div/div[2]/div/product-grid/div/div[5]/div/div/div[4]/span[2]";
-            //this.xPathParams.Add(param);
 
             this.sourceURL = "https://www.klikk.com.mt/";
 

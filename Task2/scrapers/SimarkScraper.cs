@@ -21,16 +21,18 @@ namespace HardwareScraper
             param.XPathAvailabilityParameter = "//*[@id='ctl00_MainContent_ProductsListView_DataGrid']/tbody/tr[3]/td[4]/span[2]";
             this.xPathParams.Add(param);
 
+
+            this.sourceURL = "https://www.simarksupplies.com/";
+
         }
 
         public override List<ResultItem> Search(string searchTerm)
         {
             ChromeDriver client = ChromeDriverWrapper.Instance.Client;
 
-
             List<ResultItem> results = new List<ResultItem>();
 
-            string url = "https://www.simarksupplies.com/Product.aspx/Search/" + searchTerm;
+            string url = this.sourceURL + "Product.aspx/Search/" + searchTerm;
             client.Navigate().GoToUrl(url);
 
             foreach (XPathParameters param in this.xPathParams)

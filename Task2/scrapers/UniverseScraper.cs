@@ -11,15 +11,15 @@ namespace HardwareScraper
         public UniverseScraper()
         {
             XPathParameters param = new XPathParameters();
-            param.XPathNameParameter = "//*[@id='npacc - catalog']/div[2]/div[9]/div[1]/div[1]/div[2]/div[1]/a";
-            param.XPathPriceParameter = "//*[@id='npacc - catalog']/div[2]/div[9]/div[1]/div[2]/div[1]/div[2]";
-            param.XPathAvailabilityParameter = "//*[@id='npacc - catalog']/div[2]/div[9]/div[1]/div[2]/div[1]/div[5]";
+            param.XPathNameParameter = "/html/body/div[7]/div[4]/div/div/div[2]/div[9]/div[1]/div[1]/div[2]/div[1]/a";
+            param.XPathPriceParameter = "/html/body/div[7]/div[4]/div/div/div[2]/div[9]/div[1]/div[2]/div[1]/div[2]";
+            param.XPathAvailabilityParameter = "/html/body/div[7]/div[4]/div/div/div[2]/div[9]/div[1]/div[2]/div[1]/div[5]";
             this.xPathParams.Add(param);
 
             param = new XPathParameters();
-            param.XPathNameParameter = "//*[@id='npacc - catalog']/div[2]/div[9]/div[2]/div[1]/div[2]/div[1]/a";
-            param.XPathPriceParameter = "//*[@id='npacc - catalog']/div[2]/div[9]/div[2]/div[2]/div[1]/div[2]";
-            param.XPathAvailabilityParameter = "//*[@id='npacc - catalog']/div[2]/div[9]/div[2]/div[2]/div[1]/div[5]";
+            param.XPathNameParameter = "/html/body/div[7]/div[4]/div/div/div[2]/div[9]/div[2]/div[1]/div[2]/div[1]/a";
+            param.XPathPriceParameter = "/html/body/div[7]/div[4]/div/div/div[2]/div[9]/div[2]/div[2]/div[1]/div[2]";
+            param.XPathAvailabilityParameter = "/html/body/div[7]/div[4]/div/div/div[2]/div[9]/div[2]/div[2]/div[1]/div[5]";
             this.xPathParams.Add(param);
 
         }
@@ -33,6 +33,8 @@ namespace HardwareScraper
 
             string url = "https://www.computeruniverse.net/en/search?query=" + searchTerm;
             client.Navigate().GoToUrl(url);
+
+            System.Threading.Thread.Sleep(3000);
 
             foreach (XPathParameters param in this.xPathParams)
             {

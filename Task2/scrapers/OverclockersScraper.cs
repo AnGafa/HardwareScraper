@@ -21,6 +21,7 @@ namespace HardwareScraper
             param.XPathAvailabilityParameter = "/html/body/div[4]/div/div/div/div/div[3]/div[5]/div[1]/div[2]/div/span/p";
             this.xPathParams.Add(param);
 
+            this.sourceURL = "https://www.overclockers.co.uk/";
         }
 
         public override List<ResultItem> Search(string searchTerm)
@@ -29,7 +30,7 @@ namespace HardwareScraper
 
             ChromeDriver client = ChromeDriverWrapper.Instance.Client;
 
-            string url = "https://www.overclockers.co.uk/search?sSearch=" + searchTerm;
+            string url = this. sourceURL + "search?sSearch=" + searchTerm;
             client.Navigate().GoToUrl(url);
 
             foreach (XPathParameters param in this.xPathParams)

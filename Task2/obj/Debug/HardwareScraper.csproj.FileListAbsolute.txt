@@ -31,3 +31,4 @@ D:\Users\Andrea Gafa\Documents\GitHub\HardwareScraper\Task2\obj\Debug\HardwareSc
 D:\Users\Andrea Gafa\Documents\GitHub\HardwareScraper\Task2\obj\Debug\HardwareScraper.csproj.CopyComplete
 D:\Users\Andrea Gafa\Documents\GitHub\HardwareScraper\Task2\obj\Debug\HardwareScraper.exe
 D:\Users\Andrea Gafa\Documents\GitHub\HardwareScraper\Task2\obj\Debug\HardwareScraper.pdb
+D:\Users\Andrea Gafa\Documents\GitHub\HardwareScraper\Task2\obj\Debug\HardwareScraper.csprojAssemblyReference.cache
