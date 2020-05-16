@@ -1,5 +1,6 @@
 ﻿using OpenQA.Selenium;
 using System.Collections.Generic;
+using OpenQA.Selenium.Chrome;
 
 namespace HardwareScraper
 {
@@ -11,19 +12,20 @@ namespace HardwareScraper
             XPathParameters param = new XPathParameters();
             param.XPathNameParameter = "//*[@id='main']/ul/li[1]/div/div/div[1]/a[2]/h2";
             param.XPathPriceParameter = "//*[@id='main']/ul/li[1]/div/div/div[3]/div[1]/span/span/span";
-            param.XPathAvailabilityParameter = "";
             this.xPathParams.Add(param);
 
             param = new XPathParameters();
             param.XPathNameParameter = "//*[@id='main']/ul/li[2]/div/div/div[1]/a[2]/h2";
             param.XPathPriceParameter = "//*[@id='main']/ul/li[2]/div/div/div[3]/div[1]/span/span/span";
-            param.XPathAvailabilityParameter = "";
             this.xPathParams.Add(param);
 
         }
 
         public override List<ResultItem> Search(string searchTerm)
         {
+            ChromeDriver client = ChromeDriverWrapper.Instance.Client;
+
+
             List<ResultItem> results = new List<ResultItem>();
 
             string url = "https://gamerslounge.mt/?s=" + searchTerm + "&post_type=product&dgwt_wcas=1";
@@ -39,9 +41,6 @@ namespace HardwareScraper
 
                 IWebElement resultPriceElement = client.FindElement(By.XPath(param.XPathPriceParameter));
                 result.Price = resultPriceElement.Text;
-
-                IWebElement resultAvailabilityElement = client.FindElement(By.XPath(param.XPathAvailabilityParameter));
-                result.Availability = resultAvailabilityElement.Text;
 
                 results.Add(result);
             }

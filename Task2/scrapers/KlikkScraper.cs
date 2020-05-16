@@ -1,5 +1,6 @@
 ﻿using OpenQA.Selenium;
 using System.Collections.Generic;
+using OpenQA.Selenium.Chrome;
 
 namespace HardwareScraper
 {
@@ -8,30 +9,58 @@ namespace HardwareScraper
 
         public KlikkScraper()
         {
-            //client.Navigate().GoToUrl("https://www.klikk.com.mt/");       moved down
 
-            XPathParameters param = new XPathParameters();
-            param.XPathNameParameter = "/html/body/div[2]/div/main/section/div/div/div[2]/div/product-grid/div/div[3]/div/div/a/div[2]/p";
-            param.XPathPriceParameter = "//*[@id='content']/div/div/div[2]/div/product-grid/div/div[3]/div/div/div[2]/div[1]/text";
-            param.XPathAvailabilityParameter = "//*[@id='content']/div/div/div[2]/div/product-grid/div/div[3]/div/div/div[4]/span[2]";
-            this.xPathParams.Add(param);
+            const int numberOfItems = 5;
 
-            param = new XPathParameters();
-            param.XPathNameParameter = "//*[@id='content']/div/div/div[2]/div/product-grid/div/div[4]/div/div/a/div[2]/p";
-            param.XPathPriceParameter = "//*[@id='content']/div/div/div[2]/div/product-grid/div/div[4]/div/div/div[2]/div[1]/text";
-            param.XPathAvailabilityParameter = "//*[@id='content']/div/div/div[2]/div/product-grid/div/div[4]/div/div/div[8]/span[2]";
-            this.xPathParams.Add(param);
+
+            XPathParameters param = null;
+
+            for (int i = 0; i < numberOfItems; i++)
+            {
+                param = new XPathParameters();
+                param.XPathNameParameter = "/html/body/div[2]/div/main/section/div/div/div[2]/div/product-grid/div/div["+ (3+i) +"]/div/div/a/div[2]/p";
+                param.XPathPriceParameter = "/html/body/div[2]/div/main/section/div/div/div[2]/div/product-grid/div/div[" + (3 + i) + "]/div/div/div[2]/div[1]";
+                param.XPathAvailabilityParameter = "//*[@id='content']/div/div/div[2]/div/product-grid/div/div[" + (3 + i) + "]/div/div/div[4]/span[2]";
+                this.xPathParams.Add(param);
+            }
+
+
+
+
+            //XPathParameters param = new XPathParameters();
+            //param.XPathNameParameter = "/html/body/div[2]/div/main/section/div/div/div[2]/div/product-grid/div/div[3]/div/div/a/div[2]/p";
+            //param.XPathPriceParameter = "/html/body/div[2]/div/main/section/div/div/div[2]/div/product-grid/div/div[3]/div/div/div[2]/div[1]";
+            //param.XPathAvailabilityParameter = "//*[@id='content']/div/div/div[2]/div/product-grid/div/div[3]/div/div/div[4]/span[2]";
+            //this.xPathParams.Add(param);
+
+            //param = new XPathParameters();
+            //param.XPathNameParameter = "//*[@id='content']/div/div/div[2]/div/product-grid/div/div[4]/div/div/a/div[2]/p";
+            //param.XPathPriceParameter = "//*[@id='content']/div/div/div[2]/div/product-grid/div/div[4]/div/div/div[2]/div[1]";
+            //param.XPathAvailabilityParameter = "//*[@id='content']/div/div/div[2]/div/product-grid/div/div[4]/div/div/div[4]/span[2]";
+            //this.xPathParams.Add(param);
+
+
+            //param = new XPathParameters();
+            //param.XPathNameParameter = "//*[@id='content']/div/div/div[2]/div/product-grid/div/div[5]/div/div/a/div[2]/p";
+            //param.XPathPriceParameter = "//*[@id='content']/div/div/div[2]/div/product-grid/div/div[5]/div/div/div[2]/div[1]";
+            //param.XPathAvailabilityParameter = "//*[@id='content']/div/div/div[2]/div/product-grid/div/div[5]/div/div/div[4]/span[2]";
+            //this.xPathParams.Add(param);
+
+            this.sourceURL = "https://www.klikk.com.mt/";
 
         }
 
         public override List<ResultItem> Search(string searchTerm)
         {
+            ChromeDriver client = ChromeDriverWrapper.Instance.Client;
 
             List<ResultItem> results = new List<ResultItem>();
 
 
-            string url = "https://www.klikk.com.mt/product?q=" + searchTerm;
+            string url =  this.sourceURL + "product?q=" + searchTerm;
             client.Navigate().GoToUrl(url);
+
+            System.Threading.Thread.Sleep(3000);
 
             foreach (XPathParameters param in this.xPathParams)
             {
@@ -46,6 +75,8 @@ namespace HardwareScraper
 
                 IWebElement resultAvailabilityElement = client.FindElement(By.XPath(param.XPathAvailabilityParameter));
                 result.Availability = resultAvailabilityElement.Text;
+
+                result.SourceURL = this.sourceURL;
 
                 results.Add(result);
             }

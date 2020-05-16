@@ -1,5 +1,6 @@
 ﻿using OpenQA.Selenium;
 using System.Collections.Generic;
+using OpenQA.Selenium.Chrome;
 
 namespace HardwareScraper
 {
@@ -8,7 +9,7 @@ namespace HardwareScraper
 
         public ScanScraper()
         {
-            client.Navigate().GoToUrl("http://scanmalta.com");
+            
 
             XPathParameters param = new XPathParameters();
             param.XPathNameParameter            = "//*[@id='maincontent']/div[3]/div[1]/div[3]/div[2]/ol/li[1]/div/div[2]/strong/a";
@@ -26,16 +27,13 @@ namespace HardwareScraper
 
         public override List<ResultItem> Search(string searchTerm)
         {
+            ChromeDriver client = ChromeDriverWrapper.Instance.Client;
+
 
             List<ResultItem> results = new List<ResultItem>();
 
-            IWebElement searchField = client.FindElementById("search");
-            searchField.SendKeys(searchTerm);
-
-            //IWebElement button = client.FindElement(By.TagName("button"));
-            IWebElement button = client.FindElement(By.XPath("//button[@title='Search']"));
-            button.Click();
-
+            string url = "https://www.scanmalta.com/shop/catalogsearch/result/?q=" + searchTerm;
+            client.Navigate().GoToUrl(url);
 
             foreach(XPathParameters param in this.xPathParams)
             {

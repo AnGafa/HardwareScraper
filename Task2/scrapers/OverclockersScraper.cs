@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
 using System.Collections.Generic;
 
 namespace HardwareScraper
@@ -9,15 +10,15 @@ namespace HardwareScraper
         public OverclockersScraper()
         {
             XPathParameters param = new XPathParameters();
-            param.XPathNameParameter = "//*[@id='listing - 4col']/div[1]/div/a[2]/span[2]";
-            param.XPathPriceParameter = "//*[@id='listing - 4col']/div[1]/div/p";   //to test -- only parent class specified -- 'WAS' span before 'Current' -- [2]?
-            param.XPathAvailabilityParameter = "//*[@id='listing - 4col']/div[1]/div/span/p";
+            param.XPathNameParameter = "/html/body/div[4]/div/div/div/div/div[3]/div[5]/div[1]/div[1]/div/a[2]/span[2]";
+            param.XPathPriceParameter = "/html/body/div[4]/div/div/div/div/div[3]/div[5]/div[1]/div[1]/div/p";
+            param.XPathAvailabilityParameter = "/html/body/div[4]/div/div/div/div/div[3]/div[5]/div[1]/div[1]/div/span/p";
             this.xPathParams.Add(param);
 
             param = new XPathParameters();
-            param.XPathNameParameter = "//*[@id='listing - 4col']/div[2]/div/a[2]/span[2]";
-            param.XPathPriceParameter = "//*[@id='listing - 4col']/div[2]/div/p/span";  //only current price
-            param.XPathAvailabilityParameter = "//*[@id='listing - 4col']/div[2]/div/span/p";
+            param.XPathNameParameter = "/html/body/div[4]/div/div/div/div/div[3]/div[5]/div[1]/div[2]/div/a[2]/span[2]";
+            param.XPathPriceParameter = "/html/body/div[4]/div/div/div/div/div[3]/div[5]/div[1]/div[2]/div/p";
+            param.XPathAvailabilityParameter = "/html/body/div[4]/div/div/div/div/div[3]/div[5]/div[1]/div[2]/div/span/p";
             this.xPathParams.Add(param);
 
         }
@@ -25,6 +26,8 @@ namespace HardwareScraper
         public override List<ResultItem> Search(string searchTerm)
         {
             List<ResultItem> results = new List<ResultItem>();
+
+            ChromeDriver client = ChromeDriverWrapper.Instance.Client;
 
             string url = "https://www.overclockers.co.uk/search?sSearch=" + searchTerm;
             client.Navigate().GoToUrl(url);

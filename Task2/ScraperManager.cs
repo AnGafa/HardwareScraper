@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace HardwareScraper
 {
@@ -8,17 +9,26 @@ namespace HardwareScraper
 
         public ScraperManager()
         {
-            //hardwareScrapers.Add(new ScanScraper());
+            hardwareScrapers.Add(new ScanScraper());
             hardwareScrapers.Add(new KlikkScraper());
+            hardwareScrapers.Add(new GamersScraper());
+            hardwareScrapers.Add(new OverclockersScraper());
         }
 
-        public void scrape(string searchString)
+        public List<ResultItem> scrape(string searchString)
         {
-            foreach(Scraper s in hardwareScrapers)
+
+            List<ResultItem> results = new List<ResultItem>();
+
+            foreach (Scraper s in hardwareScrapers)
             {
-                s.Search(searchString);
+                results.AddRange(s.Search(searchString));
             }
-                
+
+            ChromeDriverWrapper.Instance.Client.Close();
+
+            return results;
+
         }
     }
 }

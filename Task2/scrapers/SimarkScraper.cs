@@ -1,5 +1,6 @@
 ﻿using OpenQA.Selenium;
 using System.Collections.Generic;
+using OpenQA.Selenium.Chrome;
 
 namespace HardwareScraper
 {
@@ -24,6 +25,9 @@ namespace HardwareScraper
 
         public override List<ResultItem> Search(string searchTerm)
         {
+            ChromeDriver client = ChromeDriverWrapper.Instance.Client;
+
+
             List<ResultItem> results = new List<ResultItem>();
 
             string url = "https://www.simarksupplies.com/Product.aspx/Search/" + searchTerm;
