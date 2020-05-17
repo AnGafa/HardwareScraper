@@ -17,8 +17,9 @@ namespace HardwareScraper
 
         protected List<XPathParameters> xPathParams = new List<XPathParameters>();
 
-        protected string sourceURL = string.Empty; 
+        protected string sourceURL = string.Empty;
 
+        protected const int numberOfItems = 5;
 
         public Scraper()
         {

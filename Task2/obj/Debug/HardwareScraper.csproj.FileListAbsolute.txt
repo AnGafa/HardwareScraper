@@ -27,8 +27,8 @@ D:\Users\Andrea Gafa\Documents\GitHub\HardwareScraper\Task2\bin\Debug\HardwareSc
 D:\Users\Andrea Gafa\Documents\GitHub\HardwareScraper\Task2\bin\Debug\HardwareScraper.pdb
 D:\Users\Andrea Gafa\Documents\GitHub\HardwareScraper\Task2\bin\Debug\WebDriver.dll
 D:\Users\Andrea Gafa\Documents\GitHub\HardwareScraper\Task2\bin\Debug\WebDriver.xml
+D:\Users\Andrea Gafa\Documents\GitHub\HardwareScraper\Task2\obj\Debug\HardwareScraper.csprojAssemblyReference.cache
 D:\Users\Andrea Gafa\Documents\GitHub\HardwareScraper\Task2\obj\Debug\HardwareScraper.csproj.CoreCompileInputs.cache
 D:\Users\Andrea Gafa\Documents\GitHub\HardwareScraper\Task2\obj\Debug\HardwareScraper.csproj.CopyComplete
 D:\Users\Andrea Gafa\Documents\GitHub\HardwareScraper\Task2\obj\Debug\HardwareScraper.exe
 D:\Users\Andrea Gafa\Documents\GitHub\HardwareScraper\Task2\obj\Debug\HardwareScraper.pdb
-D:\Users\Andrea Gafa\Documents\GitHub\HardwareScraper\Task2\obj\Debug\HardwareScraper.csprojAssemblyReference.cache

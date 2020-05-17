@@ -10,7 +10,6 @@ namespace HardwareScraper
         public KlikkScraper()
         {
 
-            const int numberOfItems = 5;
             
             for (int i = 0; i < numberOfItems; i++)
             {
@@ -23,10 +22,9 @@ namespace HardwareScraper
                 this.xPathParams.Add(param);
             }
 
-
-
             this.sourceURL = "https://www.klikk.com.mt/";
 
+        
         }
 
         public override List<ResultItem> Search(string searchTerm)

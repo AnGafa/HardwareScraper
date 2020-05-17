@@ -9,7 +9,7 @@ namespace HardwareScraper
 
         private static ChromeDriverWrapper instance = null;
 
-        private ChromeDriver client;
+        private readonly ChromeDriver client;
 
 
         public static ChromeDriverWrapper Instance 

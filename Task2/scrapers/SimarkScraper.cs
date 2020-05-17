@@ -9,21 +9,18 @@ namespace HardwareScraper
 
         public SimarkScraper()
         {
-            XPathParameters param = new XPathParameters();
-            param.XPathNameParameter = "//*[@id='ctl00_MainContent_ProductsListView_DataGrid']/tbody/tr[2]/td[2]/a";
-            param.XPathPriceParameter = "//*[@id='ctl00_MainContent_ProductsListView_DataGrid']/tbody/tr[2]/td[3]/span[1]"; 
-            param.XPathAvailabilityParameter = "//*[@id='ctl00_MainContent_ProductsListView_DataGrid']/tbody/tr[2]/td[4]/span[2]";
-            this.xPathParams.Add(param);
-
-            param = new XPathParameters();
-            param.XPathNameParameter = "//*[@id='ctl00_MainContent_ProductsListView_DataGrid']/tbody/tr[3]/td[2]/a";
-            param.XPathPriceParameter = "//*[@id='ctl00_MainContent_ProductsListView_DataGrid']/tbody/tr[3]/td[3]/span[1]";
-            param.XPathAvailabilityParameter = "//*[@id='ctl00_MainContent_ProductsListView_DataGrid']/tbody/tr[3]/td[4]/span[2]";
-            this.xPathParams.Add(param);
-
+            for (int i = 0; i < numberOfItems; i++)
+            {
+                XPathParameters param = new XPathParameters
+                {
+                    XPathNameParameter = "//*[@id='ctl00_MainContent_ProductsListView_DataGrid']/tbody/tr[" + (2 + i) + "]/td[2]/a",
+                    XPathPriceParameter = "//*[@id='ctl00_MainContent_ProductsListView_DataGrid']/tbody/tr[" + (2 + i) + "]/td[3]/span[1]",
+                    XPathAvailabilityParameter = "//*[@id='ctl00_MainContent_ProductsListView_DataGrid']/tbody/tr[" + (2 + i) + "]/td[4]/span[2]"
+                };
+                this.xPathParams.Add(param);
+            }
 
             this.sourceURL = "https://www.simarksupplies.com/";
-
         }
 
         public override List<ResultItem> Search(string searchTerm)
@@ -48,6 +45,8 @@ namespace HardwareScraper
 
                 IWebElement resultAvailabilityElement = client.FindElement(By.XPath(param.XPathAvailabilityParameter));
                 result.Availability = resultAvailabilityElement.Text;
+
+                result.SourceURL = this.sourceURL;
 
                 results.Add(result);
             }

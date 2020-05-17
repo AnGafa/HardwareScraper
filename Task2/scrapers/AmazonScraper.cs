@@ -10,15 +10,15 @@ namespace HardwareScraper
         public AmazonScraper()
         {
             XPathParameters param = new XPathParameters();
-            param.XPathNameParameter = "/html/body/div[1]/div[1]/div[1]/div[2]/div/span[4]/div[1]/div[9]/div/span/div/div/div[2]/div[2]/div/div[1]/div/div/div[1]/h2/a/span";///html/body/div[1]/div[1]/div[1]/div[2]/div/span[4]/div[2]/div[9]/div/span/div/div/div[2]/div[2]/div/div[1]/div/div/div[1]/h2/a/span
-            param.XPathPriceParameter = "/html/body/div[1]/div[1]/div[1]/div[2]/div/span[4]/div[1]/div[9]/div/span/div/div/div[2]/div[2]/div/div[2]/div[1]/div/div/div"; // 3 spans -- symbol, full, cents
-            param.XPathAvailabilityParameter = "/html/body/div[1]/div[1]/div[1]/div[2]/div/span[4]/div[1]/div[9]/div/span/div/div/div[2]/div[2]/div/div[2]/div[1]/div/div[2]/div/span";
+            param.XPathNameParameter =             "/html/body/div[1]/div[1]/div[1]/div[2]/div/span[4]/div[1]/div[9]/div/span/div/div/div[2]/div[2]/div/div[1]/div/div/div[1]/h2/a/span";///html/body/div[1]/div[1]/div[1]/div[2]/div/span[4]/div[2]/div[9]/div/span/div/div/div[2]/div[2]/div/div[1]/div/div/div[1]/h2/a/span
+            param.XPathPriceParameter =            "/html/body/div[1]/div[1]/div[1]/div[2]/div/span[4]/div[1]/div[9]/div/span/div/div/div[2]/div[2]/div/div[2]/div[1]/div/div/div"; // 3 spans -- symbol, full, cents
+            param.XPathAvailabilityParameter =     "/html/body/div[1]/div[1]/div[1]/div[2]/div/span[4]/div[1]/div[9]/div/span/div/div/div[2]/div[2]/div/div[2]/div[1]/div/div[2]/div/span";
             this.xPathParams.Add(param);
 
             param = new XPathParameters();
-            param.XPathNameParameter = "/html/body/div[1]/div[1]/div[1]/div[2]/div/span[4]/div[1]/div[10]/div/span/div/div/div[2]/div[2]/div/div[1]/div/div/div[1]/h2/a/span";
-            param.XPathPriceParameter = "/html/body/div[1]/div[1]/div[1]/div[2]/div/span[4]/div[1]/div[10]/div/span/div/div/div[2]/div[2]/div/div[2]/div[1]/div/div[1]/div/div/a/span"; // sometimes no info -- try statement?
-            param.XPathAvailabilityParameter = "/html/body/div[1]/div[1]/div[1]/div[2]/div/span[4]/div[1]/div[10]/div/span/div/div/div[2]/div[2]/div/div[2]/div[1]/div/div[2]/div/span";// same as ^
+            param.XPathNameParameter =          "/html/body/div[1]/div[1]/div[1]/div[2]/div/span[4]/div[1]/div[10]/div/span/div/div/div[2]/div[2]/div/div[1]/div/div/div[1]/h2/a/span";
+            param.XPathPriceParameter =         "/html/body/div[1]/div[1]/div[1]/div[2]/div/span[4]/div[1]/div[10]/div/span/div/div/div[2]/div[2]/div/div[2]/div[1]/div/div[1]/div/div/a/span"; // sometimes no info -- try statement?
+            param.XPathAvailabilityParameter =  "/html/body/div[1]/div[1]/div[1]/div[2]/div/span[4]/div[1]/div[10]/div/span/div/div/div[2]/div[2]/div/div[2]/div[1]/div/div[2]/div/span";// same as ^
             this.xPathParams.Add(param);
 
         }

@@ -1,6 +1,7 @@
 ﻿using OpenQA.Selenium;
 using System.Collections.Generic;
 using OpenQA.Selenium.Chrome;
+using System;
 
 namespace HardwareScraper
 {
@@ -12,10 +13,10 @@ namespace HardwareScraper
             
 
             XPathParameters param = new XPathParameters();
-            param.XPathNameParameter            = "//*[@id='maincontent']/div[3]/div[1]/div[3]/div[2]/ol/li[1]/div/div[2]/strong/a";
-            param.XPathPriceParameter           = "/html/body/div[1]/main/div[3]/div[1]/div[3]/div[2]/ol/li[1]/div/div[2]/div[2]/span/span";
-            param.XPathAvailabilityParameter    = "//li[contains(concat(' ',normalize-space(@class),' '),' item ')][1]//button[contains(concat(' ',normalize-space(@class),' '),' action ')]//span";
-            this.xPathParams.Add(param);
+            //param.XPathNameParameter            = "/html/body/div[1]/main/div[3]/div[1]/div[3]/div[2]/ol/li[1]/div/div[2]/strong/a";
+            //param.XPathPriceParameter           = "/html/body/div[1]/main/div[3]/div[1]/div[3]/div[2]/ol/li[1]/div/div[2]/div[2]/span/span";
+            //param.XPathAvailabilityParameter    = "//li[contains(concat(' ',normalize-space(@class),' '),' item ')][1]//button[contains(concat(' ',normalize-space(@class),' '),' action ')]//span";
+            //this.xPathParams.Add(param);
 
             param = new XPathParameters();
             param.XPathNameParameter = "/html/body/div[1]/main/div[3]/div[1]/div[3]/div[2]/ol/li[2]/div/div[2]/strong/a";
@@ -35,21 +36,31 @@ namespace HardwareScraper
             string url = "https://www.scanmalta.com/shop/catalogsearch/result/?q=" + searchTerm;
             client.Navigate().GoToUrl(url);
 
+            System.Threading.Thread.Sleep(500);
+
             foreach(XPathParameters param in this.xPathParams)
             {
-                // start loop
-                ResultItem result = new ResultItem();
+                try
+                {
 
-                IWebElement resultNameElement = client.FindElement(By.XPath(param.XPathNameParameter));
-                result.ProductName = resultNameElement.Text;
+                    // start loop
+                    ResultItem result = new ResultItem();
 
-                IWebElement resultPriceElement = client.FindElement(By.XPath(param.XPathPriceParameter));
-                result.Price = resultPriceElement.Text;
+                    IWebElement resultNameElement = client.FindElement(By.XPath(param.XPathNameParameter));
+                    result.ProductName = resultNameElement.Text;
 
-                IWebElement resultAvailabilityElement = client.FindElement(By.XPath(param.XPathAvailabilityParameter));
-                result.Availability = resultAvailabilityElement.Text;
+                    IWebElement resultPriceElement = client.FindElement(By.XPath(param.XPathPriceParameter));
+                    result.Price = resultPriceElement.Text;
 
-                results.Add(result);
+                    IWebElement resultAvailabilityElement = client.FindElement(By.XPath(param.XPathAvailabilityParameter));
+                    result.Availability = resultAvailabilityElement.Text;
+
+                    results.Add(result);
+                }
+                catch(Exception )
+                {
+                    Console.WriteLine("Item scrape failed");
+                }
             }
 
             return results;

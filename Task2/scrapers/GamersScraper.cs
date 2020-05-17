@@ -9,16 +9,19 @@ namespace HardwareScraper
 
         public GamersScraper()
         {
-            XPathParameters param = new XPathParameters();
-            param.XPathNameParameter = "//*[@id='main']/ul/li[1]/div/div/div[1]/a[2]/h2";
-            param.XPathPriceParameter = "//*[@id='main']/ul/li[1]/div/div/div[3]/div[1]/span/span/span";
-            this.xPathParams.Add(param);
 
-            param = new XPathParameters();
-            param.XPathNameParameter = "//*[@id='main']/ul/li[2]/div/div/div[1]/a[2]/h2";
-            param.XPathPriceParameter = "//*[@id='main']/ul/li[2]/div/div/div[3]/div[1]/span/span/span";
-            this.xPathParams.Add(param);
+            for (int i = 0; i < numberOfItems; i++)
+            {
+                XPathParameters param = new XPathParameters
+                {
+                    XPathNameParameter = "//*[@id='main']/ul/li [" + (1 + i) + "]/div/div/div[1]/a[2]/h2",
+                    XPathPriceParameter = "//*[@id='main']/ul/li[" + (1 + i) + "]/div/div/div[3]/div[1]/span/span/span"
+                };
 
+                this.xPathParams.Add(param);
+            }
+
+            this.sourceURL = "https://gamerslounge.mt/";
         }
 
         public override List<ResultItem> Search(string searchTerm)
@@ -28,7 +31,7 @@ namespace HardwareScraper
 
             List<ResultItem> results = new List<ResultItem>();
 
-            string url = "https://gamerslounge.mt/?s=" + searchTerm + "&post_type=product&dgwt_wcas=1";
+            string url = this.sourceURL + "/?s=" + searchTerm + "&post_type=product&dgwt_wcas=1";
             client.Navigate().GoToUrl(url);
 
             foreach (XPathParameters param in this.xPathParams)
@@ -41,6 +44,8 @@ namespace HardwareScraper
 
                 IWebElement resultPriceElement = client.FindElement(By.XPath(param.XPathPriceParameter));
                 result.Price = resultPriceElement.Text;
+
+                result.SourceURL = this.sourceURL;
 
                 results.Add(result);
             }
