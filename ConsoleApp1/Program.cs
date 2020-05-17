@@ -28,7 +28,7 @@ namespace ConsoleApp1
 
             while(dataReader.Read())
             {
-                output = output + dataReader.GetValue(0) + dataReader.GetValue(1) + "\n";
+                output = output + dataReader.GetValue(0)+ "\n";
             }
 
             Console.WriteLine(output);
