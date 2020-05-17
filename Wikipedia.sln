@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.30105.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HardwareScraper", "Task2\HardwareScraper.csproj", "{D31749A7-F139-44AB-93D2-A12BFD46305F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{28A6FDA6-B4A8-4090-9837-33AACA3F609D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{D31749A7-F139-44AB-93D2-A12BFD46305F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D31749A7-F139-44AB-93D2-A12BFD46305F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D31749A7-F139-44AB-93D2-A12BFD46305F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28A6FDA6-B4A8-4090-9837-33AACA3F609D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28A6FDA6-B4A8-4090-9837-33AACA3F609D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28A6FDA6-B4A8-4090-9837-33AACA3F609D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28A6FDA6-B4A8-4090-9837-33AACA3F609D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
