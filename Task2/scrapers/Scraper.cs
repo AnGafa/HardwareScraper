@@ -13,6 +13,8 @@ namespace HardwareScraper
 
         protected List<string> xPathAvailability = new List<string>();
 
+        protected List<string> xPathExternalUrl = new List<string>();
+
         protected const int searchItems = 2;
 
         protected List<XPathParameters> xPathParams = new List<XPathParameters>();

@@ -9,13 +9,14 @@ namespace HardwareScraper
 
         public ScraperManager()
         {
-            //hardwareScrapers.Add(new ScanScraper());
+            hardwareScrapers.Add(new ScanScraper());
             hardwareScrapers.Add(new KlikkScraper());
             hardwareScrapers.Add(new GamersScraper());
             hardwareScrapers.Add(new OverclockersScraper());
             hardwareScrapers.Add(new SimarkScraper());
             hardwareScrapers.Add(new UniverseScraper());
-            //hardwareScrapers.Add(new AmazonScraper());
+            hardwareScrapers.Add(new UltraScraper()); ;
+            hardwareScrapers.Add(new RedditScraper());
         }
 
         public List<ResultItem> scrape(string searchString)

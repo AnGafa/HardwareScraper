@@ -4,6 +4,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace HardwareScraper
 {
@@ -12,6 +13,7 @@ namespace HardwareScraper
 
         private static DatabaseManager instance = null;
 
+        private readonly string connetionString = @"Data Source=ANDREA-PC\SQLEXPRESS01;Initial Catalog=WebScraperDatabase;User ID=sa;Password=";
 
         public static DatabaseManager Instance
         {
@@ -29,14 +31,14 @@ namespace HardwareScraper
 
         private DatabaseManager()
         {
-            string connetionString;
-            SqlConnection cnn;
-            connetionString = @"Data Source=WIN-50GP30FGO75;Initial Catalog=Demodb;User ID=sa;Password=demol23";
-            cnn = new SqlConnection(connetionString);
-            cnn.Open();
-            Console.WriteLine("Connection Open  !");
-            cnn.Close();
         }
 
+        public void TestConnection()
+        {
+            SqlConnection cnn = new SqlConnection(connetionString);
+            cnn.Open();
+            Console.WriteLine("Database Connection Open  !");
+            cnn.Close();
+        }
     }
 }

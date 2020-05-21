@@ -9,9 +9,15 @@ namespace HardwareScraper
             //ScanScraper sm = new ScanScraper();
             //CacheManager cm = new CacheManager();
 
+            DatabaseManager.Instance.TestConnection();
+            
+            
             Console.Clear();
             Console.Write("Search term: ");
             string searchTerm = Console.ReadLine();
+
+
+
 
 
             ScraperManager scrapers = new ScraperManager();

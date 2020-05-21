@@ -58,9 +58,11 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ResultItem.cs" />
+    <Compile Include="scrapers\RedditScraper.cs" />
     <Compile Include="scrapers\ScanScraper.cs" />
     <Compile Include="scrapers\Scraper.cs" />
     <Compile Include="scrapers\ScraperManager.cs" />
+    <Compile Include="scrapers\UltraScraper.cs" />
     <Compile Include="Search.cs" />
     <Compile Include="scrapers\SimarkScraper.cs" />
     <Compile Include="scrapers\UniverseScraper.cs" />

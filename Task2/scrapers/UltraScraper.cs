@@ -5,25 +5,25 @@ using System;
 
 namespace HardwareScraper
 {
-    class ScanScraper : Scraper
+    class UltraScraper : Scraper
     {
 
-        public ScanScraper()
+        public UltraScraper()
         {
 
             for (int i = 0; i < numberOfItems; i++)
             {
                 XPathParameters param = new XPathParameters
                 {
-                    XPathNameParameter = "/html/body/div[1]/main/div[3]/div[1]/div[4]/div[2]/ol/li[" + (1 + i) + "]/ div/div[2]/strong/a",
-                    XPathPriceParameter = "/html/body/div[1]/main/div[3]/div[1]/div[4]/div[2]/ol/li[" + (1 + i) + "]/div/div[2]/div[2]",
-                    XPathAvailabilityParameter = "/html/body/div[1]/main/div[3]/div[1]/div[4]/div[2]/ol/li[" + (1 + i) + "]/div/div[2]/div[3]/div/div[1]"
+                    XPathNameParameter = "/html/body/section[5]/div/div/div/div[2]/div[2]/div[" + (1 + i) + "]/div[2]/div[1]/a",
+                    XPathPriceParameter = "/html/body/section[5]/div/div/div/div[2]/div[2]/div[" + (1 + i) + "]/div[2]/div[2]",
+                    XPathAvailabilityParameter = "/html/body/section[5]/div/div/div/div[2]/div[2]/div[" + (1 + i) + "]/div[2]/div[3]"
                 };
 
                 this.xPathParams.Add(param);
             }
 
-            this.sourceURL = "https://www.scanmalta.com/";
+            this.sourceURL = "https://ultramalta.com/";
 
         }
 
@@ -34,7 +34,7 @@ namespace HardwareScraper
 
             ChromeDriver client = ChromeDriverWrapper.Instance.Client;
 
-            string url = this.sourceURL + "shop/catalogsearch/result/?q=" + searchTerm;
+            string url = this.sourceURL + "search.asp?keyword=" + searchTerm;
             client.Navigate().GoToUrl(url);
 
             System.Threading.Thread.Sleep(500);
