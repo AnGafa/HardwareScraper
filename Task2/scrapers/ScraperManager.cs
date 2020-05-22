@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace HardwareScraper
@@ -10,17 +11,18 @@ namespace HardwareScraper
         public ScraperManager()
         {
             hardwareScrapers.Add(new ScanScraper());
-            hardwareScrapers.Add(new KlikkScraper());
-            hardwareScrapers.Add(new GamersScraper());
-            hardwareScrapers.Add(new OverclockersScraper());
-            hardwareScrapers.Add(new SimarkScraper());
-            hardwareScrapers.Add(new UniverseScraper());
-            hardwareScrapers.Add(new UltraScraper()); ;
-            hardwareScrapers.Add(new RedditScraper());
+            //hardwareScrapers.Add(new KlikkScraper());
+            //hardwareScrapers.Add(new GamersScraper());
+            //hardwareScrapers.Add(new OverclockersScraper());
+            //hardwareScrapers.Add(new SimarkScraper());
+            //hardwareScrapers.Add(new UniverseScraper());
+            //hardwareScrapers.Add(new UltraScraper()); ;
+            //hardwareScrapers.Add(new RedditScraper());
         }
 
         public List<ResultItem> scrape(string searchString)
         {
+
 
             List<ResultItem> results = new List<ResultItem>();
 
@@ -30,6 +32,11 @@ namespace HardwareScraper
             }
 
             ChromeDriverWrapper.Instance.Client.Close();
+
+
+            Int32 SearchID = DatabaseManager.Instance.InsertNewSearch(searchString);
+            DatabaseManager.Instance.InsertNewSearchResults(SearchID, results);
+
 
             return results;
 

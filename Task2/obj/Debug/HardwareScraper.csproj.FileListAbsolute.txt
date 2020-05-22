@@ -32,3 +32,5 @@ D:\Users\Andrea Gafa\Documents\GitHub\HardwareScraper\Task2\obj\Debug\HardwareSc
 D:\Users\Andrea Gafa\Documents\GitHub\HardwareScraper\Task2\obj\Debug\HardwareScraper.csproj.CopyComplete
 D:\Users\Andrea Gafa\Documents\GitHub\HardwareScraper\Task2\obj\Debug\HardwareScraper.exe
 D:\Users\Andrea Gafa\Documents\GitHub\HardwareScraper\Task2\obj\Debug\HardwareScraper.pdb
+C:\Users\andre_000\Desktop\project\2b Wikipedia\Wikipedia\HardwareScraper\Task2\bin\Debug\System.Data.SqlClient.dll
+C:\Users\andre_000\Desktop\project\2b Wikipedia\Wikipedia\HardwareScraper\Task2\bin\Debug\System.Data.SqlClient.xml
